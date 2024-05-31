@@ -2,9 +2,10 @@
 export const ElViajeDeAprender = () => {
     return (
         <section className='w-full h-svh '>
-            <div className='w-full h-screen flex flex-col justify-center gap-10  snap-center'>
 
-                <div className='w-full m-4'>
+            <div className='w-full h-svh flex flex-col justify-center  px-4'>
+
+                <div className='w-full '>
                     <h1 className='text-xl uppercase'>el viaje de aprende a ver</h1>
                 </div>
                 <div className='w-full flex justify-center content-evenly'>
