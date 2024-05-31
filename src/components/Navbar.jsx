@@ -4,7 +4,6 @@ import { LogoImg } from "../ui/LogoImg";
 
 export const Navbar = () => {
     const location = useLocation()
-    console.log(location.pathname);
 
     return (
         <nav className="relative">
