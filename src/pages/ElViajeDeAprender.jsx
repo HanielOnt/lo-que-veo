@@ -6,14 +6,14 @@ import { ImageZoom } from '../components/ImageZoom'
 export const ElViajeDeAprender = () => {
 
     return (
-        <section className='w-full h-svh '>
-            <div className='w-full h-svh flex flex-col justify-center  px-4'>
+        <section className='w-full h-full '>
+            <div className='w-full h-full mt-28 mb-4 flex flex-col gap-10 justify-start px-6 '>
 
                 <div className='w-full '>
                     <h1 className='text-xl uppercase'>el viaje de aprende a ver</h1>
                 </div>
-                <div className='w-full flex justify-center content-evenly max-[720px]:flex-col'>
-                    <div className='w-[600px] h-[300px] relative max-[720px]:max-w-[400px] '>
+                <div className='w-fit flex flex-col justify-center items-start gap-4 md:flex-row md:items-evenly'>
+                    <div className='w-[600px] h-[300px] relative md:max-w-[400px] '>
                         <div className='absolute top-0 left-0'>
                             <ImageZoom src={img_4} alt={'imagen 4'} />
                         </div>
@@ -25,7 +25,7 @@ export const ElViajeDeAprender = () => {
                         </div>
 
                     </div>
-                    <aside className='w-fit px-10'>
+                    <aside className='w-fit  lg:px-4'>
                         <p className='text-xs leading-none'>Ver propósito en cada conexión.Ver esperanza después de pasar por una pérdida. Ver luz en lugares oscuros.Ver la vida en la muerte. Ver gris donde antes solo veía blanco y negro. Ver la belleza en cada momento, incluso en los dolorosos. Ver historias.Ver la realidad de la forma más sincera y espontanea. Ver la magia en lo común y lo corriente.</p>
                         <br />
                         <p className='text-xs leading-none'>Es el viaje de nunca perder de vista la maravilla de cada ser humano y cada rincón que tengo el privilegio de encontrar.</p>
