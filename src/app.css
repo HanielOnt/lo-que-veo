@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'sauceOneBoldItalic';
+    src: url('/src/fonts/OpenSauceOne-BoldItalic.woff');
+  }
+  @font-face {
+    font-family: 'sauceOneItalic';
+    src: url('/src/fonts/OpenSauceOne-Italic.woff');
+  }
+}
