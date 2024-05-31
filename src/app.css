@@ -5,10 +5,10 @@
 @layer base {
   @font-face {
     font-family: 'sauceOneBoldItalic';
-    src: url('/src/fonts/OpenSauceOne-BoldItalic.woff');
+    src: url('/src/assets/fonts/OpenSauceOne-BoldItalic.woff');
   }
   @font-face {
     font-family: 'sauceOneItalic';
-    src: url('/src/fonts/OpenSauceOne-Italic.woff');
+    src: url('/src/assets/fonts/OpenSauceOne-Italic.woff');
   }
 }

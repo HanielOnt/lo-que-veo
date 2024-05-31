@@ -1,6 +1,6 @@
 
 
-const Navbar = () => {
+export const Navbar = () => {
     return (
         <nav className="relative">
             <div className="w-full h-fit fixed top-0 flex flex-row justify-around items-center pt-10 pb-5 bg-white">
@@ -12,4 +12,3 @@ const Navbar = () => {
     )
 }
 
-export default Navbar

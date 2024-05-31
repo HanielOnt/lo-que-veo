@@ -1,17 +1,13 @@
 import './app.css'
-import { Footer } from './components/Footer'
-import MainSection from './components/MainSection'
-import Navbar from './components/Navbar'
+import { AppRouter } from './router/AppRouter'
 
 function App() {
 
 
   return (
-    <section className="w-full h-svh flex flex-col justify-evenly content-center">
-      <Navbar />
-      <MainSection />
-      <Footer />
-    </section>
+    < >
+      <AppRouter />
+    </>
   )
 }
 
