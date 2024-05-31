@@ -7,14 +7,13 @@ export const ElViajeDeAprender = () => {
 
     return (
         <section className='w-full h-svh '>
-
             <div className='w-full h-svh flex flex-col justify-center  px-4'>
 
                 <div className='w-full '>
                     <h1 className='text-xl uppercase'>el viaje de aprende a ver</h1>
                 </div>
-                <div className='w-full flex justify-center content-evenly'>
-                    <div className='w-[600px] h-[300px] relative '>
+                <div className='w-full flex justify-center content-evenly max-[720px]:flex-col'>
+                    <div className='w-[600px] h-[300px] relative max-[720px]:max-w-[400px] '>
                         <div className='absolute top-0 left-0'>
                             <ImageZoom src={img_4} alt={'imagen 4'} />
                         </div>

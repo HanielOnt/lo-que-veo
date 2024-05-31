@@ -14,7 +14,11 @@ export const ImageZoom = ({ src, alt }) => {
                     onClick={toggleZoom}
                 >
                     <div className="w-full h-svh relative flex justify-center items-center">
-                        <button className="absolute top-0 right-0 p-2 m-4 text-lg font-regular rounded-full text-white bg-gray-400 hover:text-xl active:text-2xl active:bg-gray-600">X</button>
+                        <button className="absolute right-0 top-0  m-4 w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-slate-100 hover:font-bold active:bg-black active:border-white">
+                            <span className=" text-black text-xl  active:text-white">
+                                X
+                            </span>
+                        </button>
                         <img src={src} alt={alt} className="max-w-full max-h-full" />
                     </div>
                 </div>
