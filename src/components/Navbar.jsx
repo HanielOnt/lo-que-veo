@@ -7,7 +7,7 @@ export const Navbar = () => {
 
     return (
         <nav className="relative">
-            <div className="w-full h-fit fixed top-0 flex flex-row justify-around items-center pt-10 pb-5 bg-white">
+            <div className="w-full h-fit fixed top-0 flex flex-row justify-around items-center pt-6 pb-2 bg-white">
                 <NavLink to="https://calendly.com/loqueveo/30min" target="_blank" rel="noopener noreferrer" className="uppercase">Agendame</NavLink>
                 {
                     location.pathname == '/el-viaje-de-aprender'
