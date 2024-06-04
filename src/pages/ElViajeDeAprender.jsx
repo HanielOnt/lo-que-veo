@@ -1,6 +1,6 @@
-import img_3 from '../assets/img/image-3.webp'
-import img_4 from '../assets/img/image-4.webp'
-import img_5 from '../assets/img/image-5.webp'
+import img_3 from '../assets/image 6.svg'
+import img_4 from '../assets/image 7.svg'
+import img_5 from '../assets/image 8.svg'
 import { ImageZoom } from '../components/ImageZoom'
 
 export const ElViajeDeAprender = () => {
