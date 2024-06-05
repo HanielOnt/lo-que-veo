@@ -4,8 +4,8 @@ export const Home = () => {
 
     return (
         <main >
-            <section className='w-full h-[85vh] flex justify-center items-center sm:h-[90vh]'>
-                <div className='w-full h-fit'>
+            <section className='w-full h-[80vh] flex justify-center items-center sm:h-[90vh]'>
+                <div className='w-fit h-fit flex justify-center items-center '>
                     <LogoImg />
 
                 </div>
