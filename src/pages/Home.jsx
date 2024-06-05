@@ -1,11 +1,13 @@
 import { LogoImg } from '../ui/LogoImg'
 export const Home = () => {
 
+
     return (
-        <main className="w-full h-screen flex flex-col justify-around content-center">
-            <section className='w-full h-svh '>
-                <div className='w-full h-svh flex justify-center items-center'>
+        <main >
+            <section className='w-full h-[85vh] flex justify-center items-center sm:h-[90vh]'>
+                <div className='w-full h-fit'>
                     <LogoImg />
+
                 </div>
             </section>
 

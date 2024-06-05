@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import logo from '../assets/logo.svg'
+import logo from '../assets/img/logo.webp'
 
 export const LogoImg = () => {
     const location = useLocation()

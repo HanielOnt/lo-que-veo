@@ -19,7 +19,7 @@ export const ImageZoom = ({ src, alt }) => {
                                 X
                             </span>
                         </button>
-                        <img src={src} alt={alt} className="w-fit max-w-full h-[80vh] object-contain" />
+                        <img src={src} alt={alt} className="w-fit max-w-full h-[80vh] object-contain p-4" />
                     </div>
                 </div>
             )}

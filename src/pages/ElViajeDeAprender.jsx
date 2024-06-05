@@ -15,7 +15,7 @@ export const ElViajeDeAprender = () => {
 
                 <div className='w-fit h-fit flex flex-row justify-center items-start gap-4 sm:flex-col md:items-evenly'>
                     <div className='w-1/2 h-[300px] grid grid-cols-2 my-auto items-center sm:w-full sm:h-auto'>
-                        <div className='flex flex-col items-end mt-10 gap-4 sm:mt-0 sm:p-2 sm:gap-2'>
+                        <div className='flex flex-col items-end  gap-2 sm:mt-0 sm:p-2 sm:gap-2'>
                             <div>
                                 <ImageZoom src={img_4} alt={'imagen 4'} />
                             </div>
@@ -24,7 +24,7 @@ export const ElViajeDeAprender = () => {
                             </div>
                         </div>
 
-                        <div className='flex justify-end h-[50vh] sm:h-[20vh] sm:items-center'>
+                        <div className='flex justify-end h-[50vh] ml-2 sm:h-[20vh] sm:items-center'>
                             <ImageZoom src={img_3} alt={'imagen 3'} />
                         </div>
                     </div>
