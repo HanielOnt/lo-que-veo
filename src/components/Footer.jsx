@@ -4,7 +4,7 @@ export const Footer = () => {
     return (
 
         <footer>
-            <div className="w-full h-fit  flex flex-row justify-around items-center py-2 bg-white">
+            <div className="w-full h-fit  flex flex-row justify-around items-center py-2 bg-white ">
                 <p className="uppercase  text-md sm:text-[.5rem] lg:text-xl">hagale papito</p>
                 <p className="uppercase text-center  text-md sm:text-[.625rem] lg:text-2xl leading-[1rem]">lo común y lo corriente <br />
                     <span className=' text-sm sm:text-[.4rem] lg:text-lg leading-[1rem]  '>

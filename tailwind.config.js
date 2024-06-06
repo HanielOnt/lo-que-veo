@@ -17,6 +17,20 @@ export default {
       fontFamily: {
         'openSBI': ['sauceOneBoldItalic', 'sans-serif'],
         'openSI': ['sauceOneItalic', 'sans-serif']
+      },
+      animation: {
+        'slider': 'slider 10s linear infinite',
+        'sliderRev': 'sliderRev 10s linear infinite',
+      },
+      keyframes: {
+        slider: {
+          '0%': { transform: 'translateY(0px)' },
+          '100%': { transform: 'translateY(100%);)' },
+        },
+        sliderRev: {
+          '0%': { transform: 'translateY(0px)' },
+          '100%': { transform: 'translateY(-100%);)' },
+        }
       }
     },
   },

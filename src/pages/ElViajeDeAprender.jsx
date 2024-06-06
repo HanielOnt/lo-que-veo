@@ -7,7 +7,7 @@ export const ElViajeDeAprender = () => {
 
     return (
         <section>
-            <div className='w-full h-fit mt-[3rem] flex-flex-col justify-center px-6 py-2 lg:mt-20  mb-16'>
+            <div className='w-full h-fit mt-[3rem] flex-flex-col justify-center px-6 py-2 lg:mt-20  '>
 
                 <div className='w-full h-full'>
                     <h1 className='text-xl ml-16 uppercase sm:ml-0 lg:text-3xl'>el viaje de aprende a ver</h1>
