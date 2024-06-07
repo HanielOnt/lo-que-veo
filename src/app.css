@@ -12,3 +12,9 @@
     src: url('/src/assets/fonts/OpenSauceOne-Italic.woff');
   }
 }
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+}

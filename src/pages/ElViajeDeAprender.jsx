@@ -15,7 +15,7 @@ export const ElViajeDeAprender = () => {
 
                 <div className='w-fit h-fit flex flex-row justify-center items-start gap-4 sm:flex-col md:items-evenly lg:mt-4 '>
                     <div className='w-1/2 h-[300px] grid grid-cols-2 my-auto items-center sm:w-full sm:h-auto lg:h-auto'>
-                        <div className='flex flex-col items-end  gap-2 sm:mt-0 sm:p-2 sm:gap-2 '>
+                        <div className='flex flex-col items-end  gap-4 sm:mt-0 sm:p-2 sm:gap-2 '>
                             <div>
                                 <ImageZoom className='w-full h-fit' src={img_4} alt={'imagen 4'} />
                             </div>
@@ -23,8 +23,8 @@ export const ElViajeDeAprender = () => {
                                 <ImageZoom className='w-full h-fit' src={img_5} alt={'imagen 5'} />
                             </div>
                         </div>
-
-                        <div className='flex justify-end h-[auto] ml-2 sm:h-[20vh] sm:items-center'>
+                        {/* TODO modificar el espaciado para las versiones */}
+                        <div className='flex justify-end h-[auto] ml-4 sm:h-[20vh] sm:items-center sm:ml-0 '>
                             <ImageZoom className='w-full h-fit' src={img_3} alt={'imagen 3'} />
                         </div>
                     </div>

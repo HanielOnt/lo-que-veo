@@ -19,7 +19,7 @@ export default {
         'openSI': ['sauceOneItalic', 'sans-serif']
       },
       animation: {
-        'slider': 'slider 10s linear infinite',
+        'slider': 'slider 5s linear infinite',
         'sliderRev': 'sliderRev 10s linear infinite',
       },
       keyframes: {
