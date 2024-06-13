@@ -23,7 +23,6 @@ export const ElViajeDeAprender = () => {
                                 <ImageZoom className='w-full h-fit' src={img_5} alt={'imagen 5'} />
                             </div>
                         </div>
-                        {/* TODO modificar el espaciado para las versiones */}
                         <div className='flex justify-end h-[auto] ml-4 sm:h-[20vh] sm:items-center sm:ml-0 '>
                             <ImageZoom className='w-full h-fit' src={img_3} alt={'imagen 3'} />
                         </div>
