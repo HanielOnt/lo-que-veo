@@ -19,8 +19,8 @@ export default {
         'openSI': ['sauceOneItalic', 'sans-serif']
       },
       animation: {
-        'slider': 'slider 5s linear infinite',
-        'sliderRev': 'sliderRev 10s linear infinite',
+        'sliderRev': 'slider 7s linear infinite',
+        'slider': 'sliderRev 7s linear infinite',
       },
       keyframes: {
         slider: {
