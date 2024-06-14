@@ -1,17 +1,15 @@
 import { useState } from 'react'
+import { LogoImg, Slider, Lightbox } from '../ui/'
 import { useImageZoom } from '../Hooks/useImageZoom'
-import { LogoImg } from '../ui/LogoImg'
-import { Slider } from '../ui/Slider'
 
 export const Home = () => {
-
-
-    const { isZoomed, toggleZoom } = useImageZoom()
 
     const animationDirection = {
         downwards: 'animate-slider flex-col',
         upwards: 'animate-sliderRev flex-col-reverse'
     }
+
+    const { isZoomed, toggleZoom } = useImageZoom()
 
     const [zoomImg, setZoomImg] = useState()
 
@@ -37,11 +35,7 @@ export const Home = () => {
             </section>
             {
                 isZoomed &&
-                <div className='h-full w-full absolute z-50 top-0 ' onClick={toggleZoom}>
-                    <div className='h-full w-full bg-black flex justify-center pt-10' >
-                        <img src={zoomImg} className='w-auto h-[80vh]' />
-                    </div>
-                </div>
+                <Lightbox src={zoomImg} alt={'Foto'} toggleZoom={toggleZoom} />
             }
 
         </main>
