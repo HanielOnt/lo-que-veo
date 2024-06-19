@@ -23,7 +23,7 @@
   @apply w-1/2 h-auto my-2 hover:scale-110 hover:cursor-pointer
 }
 .p-text{
-  @apply text-xs leading-[.8rem]  
+  @apply text-[12px] leading-[12px]  
 }
 .tittle{
   @apply text-xl ml-16 uppercase
