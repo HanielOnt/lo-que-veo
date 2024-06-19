@@ -13,7 +13,7 @@ export const Slider = ({ isZoomed, animationDirection, toggleZoom, handleImgSrc 
 
     return (
         <>
-            <div className="bg-red  w-full h-[67vh] flex overflow-hidden px-6 md:h-[72vh]  sm:h-[78vh] ">
+            <div className="bg-red  w-full h-[85vh] flex overflow-hidden px-6 md:h-[72vh]  sm:h-[75vh] ">
                 <div className={`w-full  whitespace-nowrap flex  ${animationDirection} ${isZoomed ? "pause h-svh" : 'h-auto'} `}>
                     <div className="w-full h-auto flex  flex-col items-center" onClick={handleSlider}>
                         <img src={img1} className="slider-img" onClick={toggleZoom} />
