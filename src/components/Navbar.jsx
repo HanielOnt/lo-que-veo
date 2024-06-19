@@ -7,7 +7,7 @@ export const Navbar = () => {
 
     return (
         <nav >
-            <div className="w-full h-fit fixed top-0 flex flex-row justify-around items-center  py-3 bg-white">
+            <div className="w-full h-fit fixed top-0 flex flex-row justify-around items-center z-50  py-3 bg-white">
                 <NavLink to="https://calendly.com/loqueveo/30min" target="_blank" rel="noopener noreferrer" className="uppercase text-md  sm:text-center sm:text-xs lg:text-xl lg:hover:font-semibold">un shooting <span className=""><br className="hidden sm:block" />o q??? </span>
 
                 </NavLink>
