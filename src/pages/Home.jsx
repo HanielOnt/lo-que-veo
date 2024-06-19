@@ -20,7 +20,7 @@ export const Home = () => {
     return (
         <main >
 
-            <section className="w-full h-[90vh]  flex justify-center items-center md:h-[85vh] sm:h-[95vh]">
+            <section className="w-full h-[90vh]  flex justify-center items-center md:h-[85vh] sm:h-[87vh]">
                 <div className='relative z-10 '>
                     <LogoImg />
                 </div>
