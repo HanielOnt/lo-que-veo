@@ -7,97 +7,135 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
 class Media extends Model{
+    use HasFactory;
 
-    // Funcion para la generacion de la api
-    public function showApi(){
-        // Creo un array
+     // Mostrar un json de la api con los datos correspondientes
+     public function showApi() {
         $media = [];
+        $text = 'Jerza';
         
-        $text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio,' ;
-        
-        // Obtener imágenes de la carpeta "columna-1"
-        $filecolumn1 = Storage::files('public/columna-1');
+        $filecolumn1 = Storage::disk('public')->files('columna-1');
         foreach ($filecolumn1 as $file) {
-            $media['columna-1'][] = Media::getMediaInfo($file);
+            $media['columna-1'][] = self::getMediaInfo($file, false);
         }
 
-        // Obtener imágenes de la carpeta "columna-2"
-        $filecolumn2 = Storage::files('public/columna-2');
+        $filecolumn2 = Storage::disk('public')->files('columna-2');
         foreach ($filecolumn2 as $file) {
-            $media['columna-2'][] = Media::getMediaInfo($file);
+            $media['columna-2'][] = self::getMediaInfo($file, false);
         }
 
-        // Obtener imágenes de la carpeta "columna-3"
-        $filecolumn3 = Storage::files('public/columna-3');
+        $filecolumn3 = Storage::disk('public')->files('columna-3');
         foreach ($filecolumn3 as $file) {
-            $media['columna-3'][] = Media::getMediaInfo($file);
+            $media['columna-3'][] = self::getMediaInfo($file, false);
         }
 
-        // Estructura de json
         $response = [
             'text' => $text,
             'carpetas' => $media
-        ]; 
+        ];
 
         return response()->json($response);
     }
 
-    public static function getMediaInfo($file){
+    // Obtener todo de las columnas
+    public static function getAllFile() {
 
-        // Obtener la extension del archivo
+        // Directorios
+        $directories = ['columna-1', 'columna-2', 'columna-3'];
+        $files = [];
+
+        // Recorrer donde estan ubicados y a la vez obtener todo
+        foreach ($directories as $directory) {
+            $directoryFiles = Storage::disk('public')->files($directory);
+            
+            foreach ($directoryFiles as $file) {
+                $files[] = self::getMediaInfo($file);
+            }
+        }
+
+        return $files;      
+    }
+
+    // Obtener toda la informacion de las carpetas con sus archivos
+    public static function getMediaInfo($file, $includeFilename = true) {
+
+        // Obtener la extencion
         $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
-        // Crear arrays de extensiones para imagenes y videos
+        // Variables para verificar que tipo de archivo son 
         $extimg = ['jpeg', 'jpg', 'png'];
-        $extvid = ['mp4', 'avi', 'mov', 'wmv', 'mkv', 'flv', 'f4v', 'swf', 'm2v'];
         $type = '';
 
+        // Verificar que es
         if (in_array($extension, $extimg)) {
             $type = 'imagen';
-        } elseif (in_array($extension, $extvid)) {
-            $type = 'video';
         } elseif ($extension === 'gif') {
             $type = 'gif';
         }
 
-        // Obtener el nombre del archivo sin la extensión
+        // Obtener nombre del archivo sin extencion
         $filename = pathinfo($file, PATHINFO_FILENAME);
 
-        // Generar un ID único comenzando en 1
+        // Generar un id empezando desde 1
         static $idCounter = 1;
         $id = $idCounter++;
 
-        // Generar una descripción (alt)
+        // Generar una descripcion
         $alt = "Descripción para {$filename}";
-
-         // Generar la urls
+        
+        // Generar una url
         $url = Storage::url($file);
 
-        return [
+        // Agrupar todo en una variable
+        $mediaInfo = [
             'id' => $id,
             'type' => $type,
             'url' => $url,
             'alt' => $alt,
         ];
-    }
 
-    public static function getAllFile(){
-        
-        $directories = ['columna-1', 'columna-2', 'columna-3'];
-        $files = [];
-
-        foreach ($directories as $directory) {
-            $directoryFiles = Storage::disk('public')->files($directory);
-            
-            foreach ($directoryFiles as $file) {
-                $files[] = [
-                    'url' => Storage::url($file),
-                    'alt' => pathinfo($file, PATHINFO_FILENAME),
-                    'type' => pathinfo($file, PATHINFO_EXTENSION),
-                ];
-            }
+        // Incluir el nombre
+        if ($includeFilename) {
+            $mediaInfo['filename'] = $filename;
         }
 
-        return $files;      
+        return $mediaInfo;
+    }
+
+    public static function getAllColumn1() {
+        return self::getFilesFromDirectory('columna-1');
+    }
+
+    public static function getAllColumn2() {
+        return self::getFilesFromDirectory('columna-2');
+    }
+
+    public static function getAllColumn3() {
+        return self::getFilesFromDirectory('columna-3');
+    }
+
+    private static function getFilesFromDirectory($directory) {
+        $files = Storage::disk('public')->files($directory);
+        $mediaFiles = [];
+
+        foreach ($files as $file) {
+            $mediaFiles[] = self::getMediaInfo($file);
+        }
+
+        return $mediaFiles;
+    }
+
+    public static function deleteFile($filePath){
+        // Construir la ruta completa al archivo en el disco público
+        $fullPath = 'public/' . $filePath;
+    
+        // Verificar que el archivo exista
+        if (Storage::disk('public')->exists($fullPath)) {
+            // Eliminar el archivo del sistema de archivos
+            Storage::disk('public')->delete($fullPath);
+            return true;
+        }
+    
+        return false;
     }
 }
