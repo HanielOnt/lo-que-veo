@@ -50,6 +50,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Tipo</th>
                                 <th>Carpeta</th>
@@ -57,31 +58,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if(empty($files))
+                            @foreach ($media as $item)
                                 <tr>
-                                    <td colspan="4">No hay archivos en esta carpeta</td>
+                                    <td>
+                                        @if($item['tipo'] == 'imagen' || $item['tipo'] == 'gif')
+                                            <img src="{{ $item['url'] }}" alt="{{ $item['nombre'] }}" style="width: 50px; height: auto;">
+                                        @endif
+                                    </td>
+                                    <td>{{ $item['nombre'] }}</td>
+                                    <td>{{ $item['tipo'] }}</td>
+                                    <td>{{ $item['carpeta'] }}</td>
+                                    <td>
+                                        <button class="btn danger" type="button" onclick="confirmDelete('{{ $item['nombre'] }}')">Eliminar</button>
+                                        <form id="deleteForm{{ $item['nombre'] }}" action="{{ route('delete') }}" method="POST" style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="hidden" name="filename" value="{{ $item['nombre'] }}">
+                                        </form>
+                                    </td>
                                 </tr>
-                            @else
-                                @foreach ($files as $file)
-                                    <tr>
-                                        <td>
-                                            <img src="{{ $file['url'] }}" alt="{{ $file['alt'] }}" style="max-width: 50px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                                            <span style="display:none;">{{ $file['filename'] }}</span> <!-- Mostrar el nombre del archivo sin la extensión -->
-                                        </td>
-                                        <td>{{ $file['type'] }}</td>
-                                        <td>{{ basename(dirname($file['url'])) }}</td>
-                                        <td>
-                                            <form id="deleteForm{{ $file['id'] }}" action="{{ route('file.delete') }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <input type="hidden" name="file_id" value="{{ $file['id'] }}">
-                                                <input type="hidden" name="file_path" value="{{ $file['url'] }}">
-                                                <button class="button-edit" type="button" onclick="confirmDelete('{{ $file['id'] }}')">Eliminar</button>
-                                            </form>                                                                                       
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            @endif
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

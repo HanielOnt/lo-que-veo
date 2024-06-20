@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\MediaController;
-use App\Models\Media;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [MediaController::class, 'showAllFiles'])->name('welcome');
+
+Route::get('/', [MediaController::class, 'show'])->name('welcome');
 
 Route::prefix('folder')->group(function () {
     Route::get('columna-1', [MediaController::class, 'showColumna1'])->name('columna-1');
@@ -13,5 +13,4 @@ Route::prefix('folder')->group(function () {
 });
 
 
-Route::delete('/file/delete', [MediaController::class, 'deleteFile'])->name('file.delete');
-
+Route::delete('/file/delete', [MediaController::class, 'deleteFile'])->name('delete');
