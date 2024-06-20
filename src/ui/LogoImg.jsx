@@ -4,7 +4,7 @@ import logo from '../assets/img/logo.webp'
 export const LogoImg = () => {
     const location = useLocation()
     return (
-        < img className={location.pathname == '/el-viaje-de-aprender' ? 'h-10 w-auto sm:h-8 lg:h-14' : 'w-full h-[20vh] sm:h-fit'} src={logo} alt='lo que veo logo' />
+        < img className={location.pathname == '/el-viaje-de-aprender' ? 'h-10 w-auto sm:h-8 lg:h-14' : 'max-w-sm h-[20vh] sm:h-auto p-2 md:max-w-md lg:max-w-lg'} src={logo} alt='lo que veo logo' />
 
     )
 }

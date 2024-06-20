@@ -11,7 +11,7 @@ export default {
 
       'md': { min: '720px', max: '1023px' },
 
-      'lg': '1024px'
+      'lg': { min: '1024px' }
     },
     extend: {
       fontFamily: {
@@ -24,11 +24,11 @@ export default {
       },
       keyframes: {
         slider: {
-          '0%': { transform: 'translateY(0px)' },
+          '0%': { transform: 'translateY(0%)' },
           '100%': { transform: 'translateY(100%);)' },
         },
         sliderRev: {
-          '0%': { transform: 'translateY(0px)' },
+          '0%': { transform: 'translateY(0%)' },
           '100%': { transform: 'translateY(-100%);)' },
         }
       }

@@ -20,11 +20,11 @@ export const Home = () => {
     return (
         <main >
 
-            <section className="w-full h-[80vh]  flex justify-center items-center md:h-[85vh] sm:h-[90vh]">
-                <div className='relative z-10'>
+            <section className="w-full h-svh flex justify-center items-center ">
+                <div className='relative z-10 '>
                     <LogoImg />
                 </div>
-                <div className="mt-20  grid grid-cols-3 w-full h-fit inset-0 z-0 px-4 absolute sm:grid-cols-2  md:mt-16 ">
+                <div className="absolute  h-auto grid grid-cols-3 items-center inset-0 z-0 px-4  sm:grid-cols-2  lg:mt-16 ">
                     <Slider isZoomed={isZoomed} toggleZoom={toggleZoom} animationDirection={animationDirection.downwards} handleImgSrc={handleImgSrc} />
                     <Slider isZoomed={isZoomed} toggleZoom={toggleZoom} animationDirection={animationDirection.upwards} handleImgSrc={handleImgSrc} />
                     <div className='sm:hidden'>
