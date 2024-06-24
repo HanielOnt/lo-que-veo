@@ -41,11 +41,15 @@ class MediaController extends Controller{
         return view('welcome', ['media' => $media, 'folder' => 'Columna 3']);
     }
 
+    public function uploadFile(Request $request){
+
+    }
+
     public function deleteFile(Request $request){
+        
         $filename = $request->input('filename');
 
-        $media = new Media();
-        $deleted = $media->deleteFile($filename);
+        $deleted = Media::deleteFile($filename);
 
         if ($deleted) {
             return redirect()->back()->with('success', 'Archivo eliminado correctamente.');
@@ -53,5 +57,6 @@ class MediaController extends Controller{
             return redirect()->back()->with('error', 'Error al eliminar el archivo.');
         }
     }
+
 
 }

@@ -12,5 +12,6 @@ Route::prefix('folder')->group(function () {
     Route::get('columna-3', [MediaController::class, 'showColumna3'])->name('columna-3');
 });
 
+Route::post('/upload', [MediaController::class, 'uploadFile'])->name('upload');
 
-Route::delete('/file/delete', [MediaController::class, 'deleteFile'])->name('delete');
+Route::delete('/delete', [MediaController::class, 'deleteFile'])->name('delete');

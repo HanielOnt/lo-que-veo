@@ -35,7 +35,8 @@
                 <div class="left">
                     <h1>{{ $folder ?? 'Dashboard' }}</h1>
                 </div>
-                <a href="#" class="report">
+                 {{-- Subir archivos --}}
+                 <a href="#" class="report" id="uploadFileButton" data-upload-url="{{ route('upload') }}">
                     <i class='bx bx-cloud-download'></i>
                     <span>Upload file</span>
                 </a>
@@ -69,11 +70,14 @@
                                     <td>{{ $item['tipo'] }}</td>
                                     <td>{{ $item['carpeta'] }}</td>
                                     <td>
-                                        <button class="btn danger" type="button" onclick="confirmDelete('{{ $item['nombre'] }}')">Eliminar</button>
-                                        <form id="deleteForm{{ $item['nombre'] }}" action="{{ route('delete') }}" method="POST" style="display: none;">
+                                        @php
+                                            $nameFull = $item['nombre'] . '.' . $item['extension'];
+                                        @endphp
+                                        <button class="btn danger" type="button" onclick="confirmDelete('{{ $nameFull }}')">Eliminar</button>
+                                        <form id="deleteForm{{ $nameFull }}" action="{{ route('delete') }}" method="POST" style="display: none;">
                                             @csrf
                                             @method('DELETE')
-                                            <input type="hidden" name="filename" value="{{ $item['nombre'] }}">
+                                            <input type="hidden" name="filename" value="{{ $nameFull }}">
                                         </form>
                                     </td>
                                 </tr>
@@ -85,6 +89,7 @@
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{ asset('deleteFile.js') }}"></script>
+    <script src="{{ asset('js/deleteFile.js') }}"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
 </body>
 </html>
