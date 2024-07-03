@@ -19,10 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $extensionImagen = pathinfo($imagen['name'], PATHINFO_EXTENSION);
         $extensionVideo = pathinfo($video['name'], PATHINFO_EXTENSION);
 
-        // Definir la ruta
-        $directory = $carpeta . '/';
-        
-        // Verificar si la carpeta existe
+        // Definir la ruta base donde están las carpetas
+        $baseDirectory = __DIR__ . '/../LoQueVeo/'; 
+                
+        // Verificar si la carpeta seleccionada existe
+        $directory = $baseDirectory . $carpeta . '/';
         if (!is_dir($directory)) {
             echo 'Error: La carpeta seleccionada no existe.<br>';
             exit;

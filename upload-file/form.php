@@ -41,6 +41,7 @@
                 <button type="submit" class="fs-5 btn btn-outline-primary">Subir Archivos</button>
             </div>
         </form>
+        <a class="form-label fs-5" href="#">Regresar</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
