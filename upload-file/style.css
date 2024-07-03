@@ -1,0 +1,29 @@
+:root{
+    --form: #f9fafc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 100%; /* Ajusta el ancho del formulario al 100% del contenedor */
+    max-width: 800px; /* Ajusta el ancho máximo según tu diseño */
+    padding: 30px;
+    background-color: var(--form); /* Color de fondo opcional */
+    border: 1px solid #000000; /* Borde opcional */
+    border-radius: 8px; /* Borde redondeado opcional */
+    text-align: center; /* Centrar el texto dentro del formulario */
+}
+
+
